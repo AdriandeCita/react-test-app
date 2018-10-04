@@ -1,5 +1,6 @@
 .App {
-  background-color: #212121;
-  color: #f8f7f8;
-  min-height: 100vh;
+    background-color: var(--regular-font-color);
+    color: var(--light-bg-color);
+    min-height: 100vh;
+    position: relative;
 }

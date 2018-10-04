@@ -7,7 +7,18 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header/>
+        <Header
+            characters={[{
+                img: '',
+                name: 'Luke Skywalker'
+            },{
+                img: '',
+                name: 'R2D2'
+            },{
+                img: '',
+                name: 'C3PO'
+            }]}
+        />
         <Films/>
       </div>
     );

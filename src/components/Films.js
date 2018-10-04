@@ -6,11 +6,19 @@ class Films extends Component {
     render() {
         return (
             <div className="films-container">
-                Movies are here!
                 <div className="wrapper">
-                    <MovieBlock/>
-                    <MovieBlock/>
-                    <MovieBlock/>
+                    <MovieBlock
+                        caption={"Episode One"}
+                        lengthOffset={100}
+                    />
+                    <MovieBlock
+                        caption={"Episode Two"}
+                        lengthOffset={40}
+                    />
+                    <MovieBlock
+                        caption={"Episode Three and it's second part of name"}
+                        lengthOffset={70}
+                    />
                 </div>
             </div>
         );
