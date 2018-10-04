@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MovieBlock from "./MovieBlock";
+import './Films.css';
 
 class Films extends Component {
     render() {
