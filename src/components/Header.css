@@ -19,10 +19,10 @@
         margin-right: auto;
     }
 
-    .filter-by-date {
+    .sort-by-date {
         display: flex;
 
-        .filter-action {
+        .sort-action {
             font-weight: 200;
             font-size: 30px;
             text-transform: uppercase;

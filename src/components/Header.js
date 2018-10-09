@@ -1,24 +1,27 @@
 import React, { Component } from 'react';
 import logo from '../logo.svg';
 import './Header.css'
+import SortByDate from "../containers/SortByDate";
+import {VideoOrders} from "../actions";
+import FilterByCharacter from "../containers/FilterByCharacter";
 
 class Header extends Component {
     characterFilterItems = this.props.characters.map((character) =>
-        <div className="filter-action">
-            <div className="character-portrait">
-                <img src="" alt="" />
-            </div>
-            <div className="action-caption">{character.name}</div>
-        </div>
+        <FilterByCharacter
+            filter={character.name}
+            character={character}
+        />
     );
 
     render() {
         return (
             <header className="main-header">
                 <div className="wrapper">
-                    <div className="filter-by-date">
-                        <div className="filter-action active">Release Date</div>
-                        <div className="filter-action">Chronological Order</div>
+                    <div className="sort-by-date">
+                        <SortByDate
+                            sorter={VideoOrders.RELEASE_DATE}>Release Date</SortByDate>
+                        <SortByDate
+                            sorter={VideoOrders.CHRONOLOGICAL}>Chronological Order</SortByDate>
                     </div>
                     <img src={logo} alt="Starwars logo" className="logo"/>
                     <div className="filter-by-character">
