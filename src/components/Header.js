@@ -3,15 +3,9 @@ import logo from '../logo.svg';
 import './Header.css'
 import SortByDate from "../containers/SortByDate";
 import {VideoOrders} from "../actions";
-import FilterByCharacter from "../containers/FilterByCharacter";
+import CharactersFilter from "./CharactersFilter";
 
 class Header extends Component {
-    characterFilterItems = this.props.characters.map((character) =>
-        <FilterByCharacter
-            filter={character.name}
-            character={character}
-        />
-    );
 
     render() {
         return (
@@ -24,9 +18,8 @@ class Header extends Component {
                             sorter={VideoOrders.CHRONOLOGICAL}>Chronological Order</SortByDate>
                     </div>
                     <img src={logo} alt="Starwars logo" className="logo"/>
-                    <div className="filter-by-character">
-                        {this.characterFilterItems}
-                    </div>
+
+                    <CharactersFilter/>
                 </div>
             </header>
         );

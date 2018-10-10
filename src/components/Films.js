@@ -3,6 +3,13 @@ import MovieBlock from "./MovieBlock";
 import './Films.css';
 
 class Films extends Component {
+    // movies = this.props.videos.map(video => (
+    //     <MovieBlock
+    //         caption={video.caption}
+    //         lengthOffset={video.lengthOffset}
+    //     />
+    // ));
+
     render() {
         return (
             <div className="films-container">

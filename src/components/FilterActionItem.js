@@ -1,5 +1,15 @@
 import React from 'react';
 
+const getImageSrc = (characterMedia) => {
+    for (let i = 0; i < characterMedia.length; i++) {
+        if (characterMedia[i].type === 'image') {
+            return characterMedia[i].src;
+        }
+    }
+
+    return '';
+};
+
 const FilterActionItem = ({character, active, onClick}) => (
 
     <div
@@ -7,7 +17,7 @@ const FilterActionItem = ({character, active, onClick}) => (
         onClick={onClick}
     >
         <div className="character-portrait">
-            <img src="" alt="" />
+            <img src={getImageSrc(character.media)} alt="" />
         </div>
         <div className="action-caption">{character.name}</div>
     </div>
