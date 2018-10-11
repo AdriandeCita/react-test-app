@@ -1,14 +1,5 @@
 import React from 'react';
-
-const getImageSrc = (characterMedia) => {
-    for (let i = 0; i < characterMedia.length; i++) {
-        if (characterMedia[i].type === 'image') {
-            return characterMedia[i].src;
-        }
-    }
-
-    return '';
-};
+import {getImageSrc} from "../utilities";
 
 const FilterActionItem = ({character, active, onClick}) => (
 

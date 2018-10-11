@@ -3,6 +3,7 @@
     padding: 20px 10px;
     position: relative;
     z-index: 2;
+    overflow: hidden;
 
     .wrapper {
         display: flex;
@@ -45,13 +46,16 @@
             height: 50px;
             margin: 0 10px;
             cursor: pointer;
+            transition: 0.3s ease;
 
             .character-portrait {
                 border-radius: 50%;
                 overflow: hidden;
                 position: absolute;
-                width: 50px;
-                height: 50px;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
 
                 img {
                     display: block;
@@ -69,6 +73,17 @@
                 bottom: -2em;
                 text-transform: uppercase;
                 opacity: 0;
+                transition: 0.3s ease;
+            }
+
+            &.active {
+                width: 75px;
+                height: 75px;
+                transform: translate(0, -12.5px);
+
+                .action-caption {
+                    opacity: 1;
+                }
             }
         }
     }

@@ -1,43 +1,54 @@
-import { connect } from 'react-redux'
-import { setVideoFilter, setVideoOrder } from '../actions'
-import Films from '../components/Films'
-​
-const getFilteredFilms = (videos, filter) => {
-    return filter ? videos.map() : videos
-}
+import { connect } from 'react-redux';
+import { setVideoFilter } from '../actions';
+import Films from '../components/Films';
 
-const sortFilms = (videos, sorter) => {
+const parseUniverseTime = (date) => {
+    return parseInt(date) * (date.indexOf('BBY') >= 0 ? -1 : 1)
+};
+
+const sortFilms = (videos = [], sorter) => {
     switch (sorter) {
-        case 'RELEASE_DATE':
-            return videos;
         case 'CHRONOLOGICAL':
-            return videos;
+            return videos.sort((prev, next) => {
+                if (Date.parse(prev.release) > Date.parse(next.release)) {
+                    return 1;
+                }
+                if (Date.parse(prev.release) < Date.parse(next.release)) {
+                    return -1;
+                }
+                return 0;
+            }).slice();
+        case 'RELEASE_DATE':
+        default:
+            return videos.sort((prev, next) => {
+                if (parseUniverseTime(prev.trivia.universeTimeline) > parseUniverseTime(next.trivia.universeTimeline)) {
+                    return 1;
+                }
+                if (parseUniverseTime(prev.trivia.universeTimeline) < parseUniverseTime(next.trivia.universeTimeline)) {
+                    return -1;
+                }
+                return 0;
+            }).slice();
     }
-}
-​
-const mapStateToProps = state => {
+};
+
+const mapStateToProps = (state, ownProps) => {
     return {
-        videos: getFilteredFilms(
-            sortFilms(state.videos, state.videoSortType),
-            state.characterFilter
-        )
+        videos: sortFilms(ownProps.videos, state.videoSorter)
     }
-}
-​
+};
+
 const mapDispatchToProps = dispatch => {
     return {
-        onSortTypeClick: sortType => {
-            dispatch(setVideoOrder(sortType))
-        },
         onCharacterClick: character => {
             dispatch(setVideoFilter(character))
         }
     }
-}
-​
-const VisibleTodoList = connect(
+};
+
+const VideoList = connect(
     mapStateToProps,
     mapDispatchToProps
-)(Films)
-​
-export default VisibleTodoList
+)(Films);
+
+export default VideoList

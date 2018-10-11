@@ -8,6 +8,20 @@ export const setVideoOrder = sorter => ({
     sorter
 });
 
+export const showModal = (modalType, modalProps) => {
+    return {
+        type: 'SHOW_MODAL',
+        modalType: modalType,
+        modalProps: modalProps
+    };
+};
+
+export const hideModal = () => {
+    return {
+        type: 'HIDE_MODAL'
+    };
+};
+
 export const VideoOrders = {
     RELEASE_DATE: 'RELEASE_DATE',
     CHRONOLOGICAL: 'CHRONOLOGICAL'

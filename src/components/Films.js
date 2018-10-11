@@ -1,35 +1,30 @@
-import React, { Component } from 'react';
-import MovieBlock from "./MovieBlock";
+import React    from 'react';
 import './Films.css';
+import VideoItem from "../containers/VideoItem";
 
-class Films extends Component {
-    // movies = this.props.videos.map(video => (
-    //     <MovieBlock
-    //         caption={video.caption}
-    //         lengthOffset={video.lengthOffset}
-    //     />
-    // ));
+const Films = ({ videos }) => {
 
-    render() {
-        return (
-            <div className="films-container">
-                <div className="wrapper">
-                    <MovieBlock
-                        caption={"Episode One"}
-                        lengthOffset={100}
+    const offsetParamsSequence = videos.map(element => element.rating);
+    const offsetEdgeTop = Math.max(...offsetParamsSequence);
+    const offsetEdgeBottom = Math.min(...offsetParamsSequence);
+
+    return (
+        <div className="films-container">
+            <div className="wrapper">
+                {videos.map((video, index) =>
+                    <VideoItem
+                        video={video}
+                        key={index}
+                        offsetTop={calculateOffsetTop(offsetEdgeTop, offsetEdgeBottom, video.rating)}
                     />
-                    <MovieBlock
-                        caption={"Episode Two"}
-                        lengthOffset={40}
-                    />
-                    <MovieBlock
-                        caption={"Episode Three and it's second part of name"}
-                        lengthOffset={70}
-                    />
-                </div>
+                )}
             </div>
-        );
-    }
-}
+        </div>
+    )
+};
+
+const calculateOffsetTop = (top, bottom, current) => {
+    return ((top - current) / ((top - bottom) / 100));
+};
 
 export default Films;

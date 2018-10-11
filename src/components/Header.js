@@ -3,7 +3,7 @@ import logo from '../logo.svg';
 import './Header.css'
 import SortByDate from "../containers/SortByDate";
 import {VideoOrders} from "../actions";
-import CharactersFilter from "./CharactersFilter";
+import LoaderCharactersFilter from "./LoaderCharactersFilter";
 
 class Header extends Component {
 
@@ -19,7 +19,7 @@ class Header extends Component {
                     </div>
                     <img src={logo} alt="Starwars logo" className="logo"/>
 
-                    <CharactersFilter/>
+                    <LoaderCharactersFilter/>
                 </div>
             </header>
         );
