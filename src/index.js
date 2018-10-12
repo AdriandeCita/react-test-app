@@ -12,7 +12,7 @@ import client from './apolloClient';
 
 WebFont.load({
     google: {
-        families: ['Oswald:100', 'Open Sans:400', 'sans-serif']
+        families: ['Oswald:200,400:latin', 'Open Sans:400:latin']
     }
 });
 

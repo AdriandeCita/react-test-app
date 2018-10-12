@@ -1,5 +1,5 @@
 .App {
-    background-color: var(--regular-font-color);
+    background: #000 url(img/bg-pattern.jpg) 0 0 repeat;
     color: var(--light-bg-color);
     min-height: 100vh;
     position: relative;

@@ -3,6 +3,7 @@ import Modal from "react-modal";
 import './ModalViewVideo.css';
 import {getImageSrc} from "../utilities";
 import YoutubeVideo from "./YoutubeVideo";
+import ModalCastView from "./ModalCastView";
 
 class ModalViewVideo extends Component {
 
@@ -15,8 +16,9 @@ class ModalViewVideo extends Component {
                 overlayClassName="modal-overlay"
                 contentLabel={this.props.video.title}
             >
-                <img src={getImageSrc(this.props.video.media)} alt="" className="modal-poster"/>
+                <img src={getImageSrc(this.props.video.media)} alt="Poster" className="modal-poster"/>
                 <button className="modal-close-button" title="Close" onClick={this.props.hideModal}>&times;</button>
+
                 <YoutubeVideo
                     video={this.props.video}
                 />
@@ -41,13 +43,10 @@ class ModalViewVideo extends Component {
                     <div className="modal-controls edit-content control-edit">
                         Edit
                     </div>
-                    <div className="modal-cast-block">
-                        <header>Cast</header>
-                        <div className="content">
-
-                        </div>
-                    </div>
                 </div>
+                <ModalCastView
+                    cast={this.props.video.cast}
+                />
             </Modal>
         )
     }

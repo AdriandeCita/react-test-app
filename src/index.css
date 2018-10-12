@@ -4,12 +4,15 @@
     --naming-font-color: #1dc832;
     --highlight-font-color: #4b5172;
     --regular-font-color: #212121;
+
+    --font-family-oswald: "Oswald", sans-serif;
+    --font-family-opensans: "Open Sans", sans-serif;
 }
 
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Open Sans', sans-serif;
+    font-family: var(--font-family-opensans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }

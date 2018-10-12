@@ -1,0 +1,23 @@
+.modal-cast-block {
+    background-color: var(--light-bg-color);
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 50px;
+
+    header {
+        font-size: 36px;
+        text-transform: uppercase;
+        text-align: center;
+        font-family: var(--font-family-oswald);
+        font-weight: 200;
+        color: var(--highlight-font-color);
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
+
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+}
