@@ -5,7 +5,7 @@
     padding-bottom: 50px;
 
     header {
-        font-size: 36px;
+        font-size: 44px;
         text-transform: uppercase;
         text-align: center;
         font-family: var(--font-family-oswald);
@@ -18,6 +18,24 @@
     .content {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-around;
+        justify-content: center;
+        margin-top: -30px;
+    }
+
+    .add-character {
+        width: 180px;
+        height: 180px;
+        margin-bottom: 55px;
+        color: var(--controls-color);
+        border-color: rgba(58, 90, 95, .25);
+
+        .icon-container {
+            width: 66%;
+            height: 66%;
+        }
+
+        .caption {
+            bottom: -2.35em;
+        }
     }
 }

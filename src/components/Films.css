@@ -1,21 +1,13 @@
 .films-container {
     display: flex;
     align-items: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    overflow-y: scroll;
 
     .wrapper {
         display: flex;
         justify-content: space-between;
-        overflow-x: auto;
-        max-width: 100%;
         padding-left: calc(50vw - 730px);
-        width: 100%;
-        margin-top: 180px;
+        padding-right: calc(50vw - 730px);
+        margin-top: 90px;
         margin-left: auto;
         margin-right: auto;
     }

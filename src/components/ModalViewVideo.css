@@ -3,17 +3,83 @@
         max-width: 1200px;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 400px;
+        margin-top: 55vh;
         background-color: #fff;
         position: relative;
         margin-bottom: 100px;
 
+        &.padded {
+            padding-top: 230px;
+        }
+
         &-wrapper {
-            padding-left: 15px;
-            padding-right: 15px;
+            padding: 0.5px 15px 150px;
             max-width: 660px;
             margin-left: auto;
             margin-right: auto;
+
+            h2 {
+                font-size: 74px;
+                font-weight: 200;
+                text-align: center;
+                text-transform: uppercase;
+                font-family: var(--font-family-oswald);
+                color: var(--naming-font-color);
+                margin-top: 0.45em;
+                margin-bottom: 0.5em;
+                line-height: 1.2;
+            }
+
+            .release-data {
+                display: flex;
+                justify-content: center;
+                text-align: center;
+
+                .item {
+                    margin: 0 23px;
+                }
+
+                header {
+                    text-transform: uppercase;
+                    font-size: 12px;
+                    line-height: 1.15;
+                }
+
+                .caption {
+                    font-family: var(--font-family-oswald);
+                    font-weight: 200;
+                    font-size: 44px;
+                    color: var(--highlight-font-color);
+                    line-height: 1.1;
+                }
+            }
+
+            .text-content {
+                padding-top: 0.125em;
+                font-size: 25px;
+                font-weight: 300;
+                line-height: 1.45;
+                padding-left: 1em;
+                padding-right: 1em;
+                padding-bottom: 0.125em;
+            }
+        }
+
+        .edit-content {
+            margin: 0 auto 50px;
+            display: block;
+            margin-top: 12px;
+            color: var(--controls-color);
+            border-color: rgba(230, 231, 230, .85);
+
+            .icon-container {
+                width: 60%;
+                height: 60%;
+            }
+
+            .caption {
+                bottom: -1.95em;
+            }
         }
     }
 
@@ -36,7 +102,7 @@
         right: 0;
         margin-left: auto;
         margin-right: auto;
-        top: -270px;
+        bottom: calc(100% - 230px);
         border: 1px solid #888;
         z-index: 2;
     }
@@ -46,12 +112,24 @@
         background-color: transparent;
         color: var(--light-bg-color);
         position: absolute;
-        font-size: 80px;
-        right: 0.5em;
-        top: 0.5em;
-        font-family: var(--font-family-oswald);
-        font-weight: 200;
+        right: 20px;
+        top: 30px;
         z-index: 2;
         cursor: pointer;
+
+        svg {
+            width: 50px;
+            height: 50px;
+        }
+
+        .icon {
+            fill: var(--light-bg-color);
+        }
+
+        &.button-dark .icon {
+            fill: var(--regular-font-color);
+        }
     }
+
+
 }

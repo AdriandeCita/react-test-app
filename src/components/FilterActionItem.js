@@ -1,10 +1,10 @@
 import React from 'react';
 import {getImageSrc} from "../utilities";
 
-const FilterActionItem = ({character, active, onClick}) => (
+const FilterActionItem = ({character, active, onClick, activeModal}) => (
 
     <div
-        className={'filter-action ' + (active ? 'active' : '')}
+        className={`filter-action ${active ? 'active' : ''} ${activeModal.modalType ? 'hidden' : ''}`}
         onClick={onClick}
     >
         <div className="character-portrait">

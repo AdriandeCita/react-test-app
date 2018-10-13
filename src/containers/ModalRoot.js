@@ -19,8 +19,6 @@ const ModalRoot = ({ modalType, modalProps }) => {
         return null;
     }
 
-    console.log(modalProps);
-
     const SpecificModal = MODAL_COMPONENTS[modalType];
     return <SpecificModal {...modalProps} />
 };

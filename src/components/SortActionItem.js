@@ -1,8 +1,8 @@
 import React from 'react';
 
-const SortActionItem = ({active, children, onClick}) => (
+const SortActionItem = ({active, children, activeModal, onClick}) => (
     <div
-        className={'sort-action ' + (active ? 'active' : '')}
+        className={`sort-action ${active ? 'active' : ''} ${activeModal.modalType ? 'hidden' : ''}`}
         onClick={onClick}
     >{children}</div>
 );

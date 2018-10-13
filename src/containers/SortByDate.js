@@ -3,7 +3,8 @@ import { setVideoOrder } from '../actions'
 import SortActionItem from "../components/SortActionItem";
 
 const mapStateToProps = (state, ownProps) => ({
-    active: ownProps.sorter === state.videoSorter
+    active: ownProps.sorter === state.videoSorter,
+    activeModal: state.modal
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

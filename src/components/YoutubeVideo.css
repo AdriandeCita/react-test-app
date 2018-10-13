@@ -10,33 +10,12 @@
 
     .player-custom-controls {
         position: absolute;
-        width: 100px;
-        height: 100px;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
         margin: auto;
-        border-radius: 50%;
-        background-color: transparent;
-        border: 1px solid rgba(230, 231, 230, .6);
-        cursor: pointer;
-
-        .icon-play {
-            fill: var(--light-bg-color)
-        }
-
-        .caption {
-            position: absolute;
-            width: 130px;
-            left: -15px;
-            bottom: -2em;
-            text-align: center;
-            text-transform: uppercase;
-            font-family: var(--font-family-oswald);
-            color: var(--light-bg-color);
-            font-weight: 200;
-            font-size: 20px;
-        }
+        border-color: rgba(230, 231, 230, .6);
+        color: var(--light-bg-color);
     }
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import YouTube from "react-youtube";
 import "./YoutubeVideo.css";
+import ButtonRound from "./ButtonRound";
 
 class YoutubeVideo extends Component {
     constructor(props) {
@@ -8,12 +9,19 @@ class YoutubeVideo extends Component {
 
         this.state = {
             playing: false,
+            rendered: false,
             videoSrc: getVideoContent(this.props.video.media)
         };
     }
 
     beginPlaying = () => {
         this.setState({playing: true});
+    };
+
+    componentDidMount = () => {
+        if (this.state.videoSrc) {
+            this.props.successRender();
+        }
     };
 
     render() {
@@ -41,13 +49,16 @@ class YoutubeVideo extends Component {
 
             return (
                 <div className="player-wrapper" style={{height: `${opts.height}px`}}>
-                    <div className="player-poster" style={{backgroundImage: `url("https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg")`}}>
-
+                    <div
+                        className="player-poster"
+                        style={{backgroundImage: `url("https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg")`}}>
                     </div>
-                    <button onClick={this.beginPlaying} className="player-custom-controls">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" fill="#f8f7f8"/></svg>
-                        <span className="caption">Play Trailer</span>
-                    </button>
+                    <ButtonRound
+                        onClick={this.beginPlaying}
+                        type="play"
+                        customClassName="player-custom-controls"
+                        caption="Play Trailer"
+                    />
                 </div>
             )
         }

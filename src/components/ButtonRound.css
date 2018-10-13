@@ -1,0 +1,41 @@
+.button-round {
+    border-radius: 50%;
+    background-color: transparent;
+    width: 100px;
+    height: 100px;
+    border: 1px solid;
+    cursor: pointer;
+    position: relative;
+
+    .icon-container {
+        width: 65%;
+        height: 65%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        transition: 0.3s ease;
+    }
+
+    &:hover .icon-container {
+        transform: scale(1.1);
+    }
+
+    .icon {
+        fill: currentColor;
+    }
+
+    .caption {
+        position: absolute;
+        width: 130px;
+        left: calc(50% - 65px);
+        bottom: -2em;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: var(--font-family-oswald);
+        font-weight: 200;
+        font-size: 26px;
+    }
+}

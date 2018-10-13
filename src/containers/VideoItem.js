@@ -13,7 +13,8 @@ const isVideoAcceptedByFilter = (video, filter) => {
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        selected: state.videoCharacterFilter ? isVideoAcceptedByFilter(ownProps.video, state.videoCharacterFilter) : true
+        selected: state.videoCharacterFilter ? isVideoAcceptedByFilter(ownProps.video, state.videoCharacterFilter) : true,
+        activeModal: state.modal
     }
 };
 

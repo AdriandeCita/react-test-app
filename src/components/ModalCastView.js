@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './ModalCastView.css';
 import ModalCastViewCharacter from "./ModalCastViewCharacter";
+import ButtonRound from "./ButtonRound";
 
 class ModalCastView extends Component {
 
@@ -17,6 +18,12 @@ class ModalCastView extends Component {
                             />
                         )
                     })}
+                    <ButtonRound
+                        customClassName="add-character modal-cast-character"
+                        onClick={false}
+                        type="add"
+                        caption="Add"
+                    />
                 </div>
             </div>
         )

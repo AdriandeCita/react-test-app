@@ -17,7 +17,9 @@ class Header extends Component {
                         <SortByDate
                             sorter={VideoOrders.CHRONOLOGICAL}>Chronological Order</SortByDate>
                     </div>
-                    <img src={logo} alt="Starwars logo" className="logo"/>
+                    <a href="/" className="logo">
+                        <img src={logo} alt="Starwars logo"/>
+                    </a>
 
                     <LoaderCharactersFilter/>
                 </div>

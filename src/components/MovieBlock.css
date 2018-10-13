@@ -1,12 +1,23 @@
 .movie {
   &-block {
-    min-height: calc(650px);
+    min-height: calc(350px);
     position: relative;
     opacity: .4;
     transition: 0.3s ease;
+    padding-top: 7.5%;
+    padding-bottom: 7.5%;
+    margin-right: 12px;
+    margin-left: 12px;
+    margin-bottom: 75px;
+    pointer-events: none;
 
     &.selected {
       opacity: 1;
+      pointer-events: auto;
+    }
+
+    &.hidden {
+      opacity: .2;
     }
   }
 
@@ -18,16 +29,31 @@
     bottom: 0;
     margin-left: auto;
     margin-right: auto;
-    width: 3px;
-    background-color: var(--light-bg-color);
+    width: 1px;
+    background: var(--light-bg-color); /* Old browsers */
+    background: linear-gradient(to bottom, transparent 0%,rgba(248,247,248,1) 25%,rgba(248,247,248,1) 75%,transparent 100%);
+  }
+
+  &-date-mark {
+    position: absolute;
+    bottom: -50px;
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    color: var(--light-bg-color);
   }
 }
 
 .movie-item {
   height: 210px;
-  width: 250px;
+  min-width: 150px;
   position: relative;
   cursor: pointer;
+  transition: 0.3s ease;
+
+  &:hover {
+    filter: drop-shadow(0 0 0.35em var(--light-bg-color));
+  }
 
   &-bg {
     display: block;
@@ -36,27 +62,29 @@
     margin-right: auto;
     margin-left: auto;
     background-color: #000;
-    border: 2px solid var(--light-bg-color);
+    border: 2px solid rgba(248,247,248,.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
   }
 
   &-caption-container {
-    position: absolute;
-    bottom: 7%;
-    width: 200%;
-    left: -50%;
-    display: flex;
-    justify-content: center;
+    position: relative;
+    z-index: 1;
+    top: 160px;
+    text-align: center;
   }
 
   &-caption {
     background-color: var(--light-bg-color);
     color: var(--naming-font-color);
-    text-align: center;
     display: inline-block;
     font-family: var(--font-family-oswald);
     font-weight: 200;
     font-size: 22px;
     text-transform: uppercase;
     padding: 0.1em 0.45em;
+    white-space: nowrap;
   }
 }
