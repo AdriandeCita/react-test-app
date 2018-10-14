@@ -1,4 +1,4 @@
-function viewVideo(state = null, action) {
+function currentVideoId(state = null, action) {
     switch (action.type) {
         case 'SET_CURRENT_VIEW_VIDEO_ID':
             return action.id;
@@ -7,4 +7,4 @@ function viewVideo(state = null, action) {
     }
 }
 
-export default viewVideo;
+export default currentVideoId;

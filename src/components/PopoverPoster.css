@@ -1,0 +1,70 @@
+.popover {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    position: absolute;
+    background-color: #ffffff;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, .4));
+    width: 570px;
+    left: -135px;
+    padding: 30px;
+    box-sizing: border-box;
+
+    &::before {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 17.5px 19px 17.5px;
+        border-color: transparent transparent #ffffff transparent;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        bottom: 100%;
+    }
+
+    header {
+        font-family: var(--font-family-oswald);
+        font-weight: 200;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 36px;
+        color: var(--highlight-font-color);
+    }
+
+    &.visible {
+        opacity: 1;
+        overflow: visible;
+        max-height: none;
+    }
+
+    &.popover-poster {
+        top: calc(50% + 40px);
+    }
+}
+
+.form {
+
+    .text-input {
+        display: block;
+        width: 100%;
+        background-color: #eef1f1;
+    }
+
+    .btn-submit {
+        color: #fff;
+        background-color: var(--controls-color);
+        border: none;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        min-width: 213px;
+        text-transform: uppercase;
+        font-family: var(--font-family-oswald);
+        font-size: 24px;
+        font-weight: 200;
+        padding: 10px 15px 10px;
+        border-radius: 55px;
+    }
+}

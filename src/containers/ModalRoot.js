@@ -4,7 +4,7 @@ import ModalView from "./ModalView";
 
 const MODAL_COMPONENTS = {
     'VIEW_VIDEO': ModalView,
-    // 'EDIT_VIDEO': ConfirmLogoutModal,
+    // 'EDIT_VIDEO': ModalEdit,
 };
 
 const mapStateToProps = (state, ownProps) => {

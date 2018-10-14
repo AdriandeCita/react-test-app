@@ -1,7 +1,9 @@
 .player-wrapper {
     max-width: 100%;
     position: relative;
+    height: 670px;
     z-index: 1;
+    background-color: rgba(150, 150, 150, 1);
 
     .player-poster {
         width: 100%;
@@ -17,5 +19,20 @@
         margin: auto;
         border-color: rgba(230, 231, 230, .6);
         color: var(--light-bg-color);
+    }
+
+    .trailer-button {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        color: #fff;
+
+        .icon-container {
+            width: 55%;
+            height: 55%;
+        }
     }
 }

@@ -1,5 +1,8 @@
 .App {
-    background: #000 url(img/bg-pattern.jpg) 0 0 repeat;
+    background-color: #000;
+    background-image: linear-gradient(to bottom, rgba(82,255,106,.25) 0,transparent 150px), url(img/bg-pattern.jpg);
+    background-position: 0 0, 0 0;
+    background-repeat: no-repeat, repeat;
     color: var(--light-bg-color);
     min-height: 100vh;
     position: relative;

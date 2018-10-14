@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import gql from 'graphql-tag';
-import './ModalCastViewCharacter.css';
+import './ModalCastCharacter.css';
 import {Query} from "react-apollo";
-import {getImageSrc} from "../utilities";
+import {getMediaSrc} from "../utilities";
 
-class ModalCastViewCharacter extends Component {
+class ModalCastCharacter extends Component {
 
     render() {
         return (
@@ -28,7 +28,7 @@ class ModalCastViewCharacter extends Component {
                     return (
                         <div className="modal-cast-character">
                             <div className="image">
-                                <img src={getImageSrc(data.character.media)} alt=""/>
+                                <img src={getMediaSrc(data.character.media, "image")} alt=""/>
                             </div>
                             <div className="caption">
                                 <div className="name">{data.character.name}</div>
@@ -42,4 +42,4 @@ class ModalCastViewCharacter extends Component {
     }
 }
 
-export default ModalCastViewCharacter;
+export default ModalCastCharacter;

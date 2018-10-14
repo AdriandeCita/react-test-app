@@ -9,6 +9,7 @@
     .wrapper {
         display: flex;
         justify-content: space-between;
+        align-items: flex-start;
         position: relative;
         min-height: 54px;
     }

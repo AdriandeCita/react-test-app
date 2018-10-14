@@ -10,7 +10,15 @@ class YoutubeVideo extends Component {
         this.state = {
             playing: false,
             rendered: false,
-            videoSrc: getVideoContent(this.props.video.media)
+            videoSrc: this.props.video,
+            videoId: this.props.video.split('?v=').slice(-1)[0],
+            opts: {
+                height: '670',
+                width: '1200',
+                playerVars: {
+                    autoplay: 1,
+                }
+            }
         };
     }
 
@@ -18,65 +26,34 @@ class YoutubeVideo extends Component {
         this.setState({playing: true});
     };
 
-    componentDidMount = () => {
-        if (this.state.videoSrc) {
-            this.props.successRender();
-        }
-    };
-
     render() {
 
-        if (this.state.videoSrc) {
-
-            const videoId = this.state.videoSrc.split('?v=').slice(-1)[0];
-            const opts = {
-                height: '670',
-                width: '1200',
-                playerVars: {
-                    autoplay: 1
-                }
-            };
-
-            if (this.state.playing) {
-                return (
-                    <YouTube
-                        videoId={videoId}
-                        opts={opts}
-                        onReady={this._onReady}
-                    />
-                )
-            }
-
+        if (this.state.playing) {
             return (
-                <div className="player-wrapper" style={{height: `${opts.height}px`}}>
-                    <div
-                        className="player-poster"
-                        style={{backgroundImage: `url("https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg")`}}>
-                    </div>
-                    <ButtonRound
-                        onClick={this.beginPlaying}
-                        type="play"
-                        customClassName="player-custom-controls"
-                        caption="Play Trailer"
+                <div className="player-wrapper">
+                    <YouTube
+                        videoId={this.state.videoId}
+                        opts={this.state.opts}
                     />
                 </div>
             )
         }
 
-        return '';
+        return (
+            <div className="player-wrapper">
+                <div
+                    className="player-poster"
+                    style={{backgroundImage: `url("https://i.ytimg.com/vi/${this.state.videoId}/maxresdefault.jpg")`}}>
+                </div>
+                <ButtonRound
+                    onClick={this.beginPlaying}
+                    type="play"
+                    customClassName="player-custom-controls"
+                    caption="Play Trailer"
+                />
+            </div>
+        );
     }
 }
-
-const getVideoContent = (media) => {
-    if (typeof media !== 'undefined') {
-        for (let i = 0; i < media.length; i++) {
-            if (media[i].type === 'youtube') {
-                return media[i].src;
-            }
-        }
-    }
-
-    return null;
-};
 
 export default YoutubeVideo;

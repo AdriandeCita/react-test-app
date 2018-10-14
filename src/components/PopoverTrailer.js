@@ -3,9 +3,9 @@ import Modal from "react-modal";
 import './ModalViewVideo.css';
 import {getMediaSrc} from "../utilities";
 import ModalCast from "./ModalCast";
+import ModalPoster from "./ModalPoster";
 import ModalVideo from "./ModalVideo";
 import ModalDescription from "./ModalDescription";
-import ModalPoster from "../containers/ModalPoster";
 
 const ModalViewVideo = ({ video, hideModal }) => (
     <Modal

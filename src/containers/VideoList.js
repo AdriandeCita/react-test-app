@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { setVideoFilter } from '../actions';
+import {setVideoFilter, showModal} from '../actions';
 import Films from '../components/Films';
 
 const parseUniverseTime = (date) => {
@@ -42,7 +42,8 @@ const mapDispatchToProps = dispatch => {
     return {
         onCharacterClick: character => {
             dispatch(setVideoFilter(character))
-        }
+        },
+        onContainerDoubleClick: () => dispatch(showModal('VIEW_VIDEO'))
     }
 };
 

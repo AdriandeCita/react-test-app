@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './ModalCastView.css';
-import ModalCastViewCharacter from "./ModalCastViewCharacter";
+import './ModalCast.css';
+import ModalCastCharacter from "./ModalCastCharacter";
 import ButtonRound from "./ButtonRound";
 
-class ModalCastView extends Component {
+class ModalCast extends Component {
 
     render() {
         return (
@@ -12,7 +12,7 @@ class ModalCastView extends Component {
                 <div className="content">
                     {this.props.cast.map((character, index) => {
                         return (
-                            <ModalCastViewCharacter
+                            <ModalCastCharacter
                                 characterId={character.id}
                                 key={index}
                             />
@@ -20,7 +20,7 @@ class ModalCastView extends Component {
                     })}
                     <ButtonRound
                         customClassName="add-character modal-cast-character"
-                        onClick={false}
+                        onClick={() => {}}
                         type="add"
                         caption="Add"
                     />
@@ -30,4 +30,4 @@ class ModalCastView extends Component {
     }
 }
 
-export default ModalCastView;
+export default ModalCast;

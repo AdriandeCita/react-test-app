@@ -1,5 +1,5 @@
 import React from 'react';
-import {getImageSrc} from "../utilities";
+import {getMediaSrc} from "../utilities";
 
 const FilterActionItem = ({character, active, onClick, activeModal}) => (
 
@@ -8,7 +8,7 @@ const FilterActionItem = ({character, active, onClick, activeModal}) => (
         onClick={onClick}
     >
         <div className="character-portrait">
-            <img src={getImageSrc(character.media)} alt="" />
+            <img src={getMediaSrc(character.media, 'image')} alt="" />
         </div>
         <div className="action-caption">{character.name}</div>
     </div>

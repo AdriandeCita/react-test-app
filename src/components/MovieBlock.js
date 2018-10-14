@@ -1,6 +1,6 @@
 import React from 'react';
 import './MovieBlock.css';
-import {getImageSrc} from "../utilities";
+import {getMediaSrc} from "../utilities";
 
 const MovieBlock = ({ video, offsetTop, selected, activeModal, showVideo }) => (
     <div className={`movie-block ${selected ? 'selected' : ''} ${(activeModal.modalType && !isCurrentVideoOpened(video, activeModal.modalProps)) ? 'hidden' : ''}`}>
@@ -10,7 +10,7 @@ const MovieBlock = ({ video, offsetTop, selected, activeModal, showVideo }) => (
             style={offsetStyle(offsetTop)}
             onClick={showVideo}
         >
-            <img src={getImageSrc(video.media)} alt="" className="movie-item-bg"/>
+            <img src={getMediaSrc(video.media, 'image')} alt="" className="movie-item-bg"/>
             <div className="movie-item-caption-container">
                 <div className="movie-item-caption">{video.title}</div>
             </div>
@@ -20,7 +20,7 @@ const MovieBlock = ({ video, offsetTop, selected, activeModal, showVideo }) => (
 );
 
 const isCurrentVideoOpened = (currentVideo, modalProp) => {
-    return modalProp.video === currentVideo;
+    return modalProp && modalProp.video === currentVideo;
 };
 
 const formatDate = (dateString) => {

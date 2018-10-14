@@ -1,8 +1,8 @@
-export const getImageSrc = (characterMedia) => {
-    if (typeof characterMedia !== 'undefined') {
-        for (let i = 0; i < characterMedia.length; i++) {
-            if (characterMedia[i].type === 'image') {
-                return characterMedia[i].src;
+export const getMediaSrc = (mediaSource, mediaType) => {
+    if (typeof mediaSource !== 'undefined') {
+        for (let i = 0; i < mediaSource.length; i++) {
+            if (mediaSource[i].type === mediaType) {
+                return mediaSource[i].src;
             }
         }
     }

@@ -22,6 +22,20 @@ export const hideModal = () => {
     };
 };
 
+export const showPopover = (popoverType, popoverProps) => {
+    return {
+        type: 'SHOW_POPOVER',
+        popoverType: popoverType,
+        popoverProps: popoverProps
+    };
+};
+
+export const hidePopover = () => {
+    return {
+        type: 'HIDE_POPOVER'
+    };
+};
+
 export const VideoOrders = {
     RELEASE_DATE: 'RELEASE_DATE',
     CHRONOLOGICAL: 'CHRONOLOGICAL'
