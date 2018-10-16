@@ -1,22 +1,23 @@
-import { connect } from 'react-redux';
-import {hideModal} from "../actions";
-import ModalViewVideo from "../components/ModalViewVideo";
+import {connect} from 'react-redux';
+import {hidePopover} from "../actions";
+import PopoverTrailer from "../components/PopoverTrailer";
 
-const defaultVideoModel = {
-    title: '',
-    media: [],
-    cast: []
+const mapStateToProps = (state, ownProps) => {
+    if (state.popover.popoverType === 'ADD_TRAILER') {
+        return {
+            popoverProps: state.popover.popoverProps,
+            visible: true
+        }
+    } else {
+        return {};
+    }
 };
 
-const mapStateToProps = (state, ownProps) => ({
-    video: ownProps.video ? ownProps.video : defaultVideoModel
-});
-
 const mapDispatchToProps = (dispatch, ownProps) => ({
-    hideModal: () => dispatch(hideModal())
+    hidePopover: () => dispatch(hidePopover())
 });
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(ModalViewVideo)
+)(PopoverTrailer)

@@ -1,4 +1,4 @@
-import { connect } from 'react-redux'
+import {connect} from 'react-redux'
 import {setVideoFilter} from '../actions'
 import FilterActionItem from "../components/FilterActionItem";
 

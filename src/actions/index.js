@@ -40,3 +40,31 @@ export const VideoOrders = {
     RELEASE_DATE: 'RELEASE_DATE',
     CHRONOLOGICAL: 'CHRONOLOGICAL'
 };
+
+export const showDescriptionForm = flag => {
+    return {
+        type: 'SHOW_DESCRIPTION_FORM',
+        flag: flag
+    };
+};
+
+export const hideDescriptionForm = flag => {
+    return {
+        type: 'HIDE_DESCRIPTION_FORM',
+        flag: flag
+    };
+};
+
+export const showCharacterForm = flag => {
+    return {
+        type: 'SHOW_CHARACTER_FORM',
+        flag: flag
+    };
+};
+
+export const hideCharacterForm = flag => {
+    return {
+        type: 'HIDE_CHARACTER_FORM',
+        flag: flag
+    };
+};

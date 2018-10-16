@@ -4,8 +4,8 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import WebFont from 'webfontloader';
-import { Provider } from 'react-redux'
-import { createStore } from 'redux'
+import {Provider} from 'react-redux'
+import {createStore} from 'redux'
 import rootReducer from './reducers';
 import ApolloProvider from "react-apollo/ApolloProvider";
 import client from './apolloClient';

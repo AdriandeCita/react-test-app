@@ -20,7 +20,7 @@ class ModalCast extends Component {
                     })}
                     <ButtonRound
                         customClassName="add-character modal-cast-character"
-                        onClick={() => {}}
+                        onClick={this.props.showCharacterForm}
                         type="add"
                         caption="Add"
                     />

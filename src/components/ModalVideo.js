@@ -2,8 +2,9 @@ import React from 'react';
 import ButtonRound from "./ButtonRound";
 import "./ModalPoster.css";
 import YoutubeVideo from "./YoutubeVideo";
+import PopoverTrailer from "../containers/PopoverTrailer";
 
-const ModalVideo = ({ path }) => {
+const ModalVideo = ({ path, showPopover }) => {
     if (path) {
         return (
             <YoutubeVideo
@@ -14,11 +15,12 @@ const ModalVideo = ({ path }) => {
         return (
             <div className="player-wrapper">
                 <ButtonRound
-                    onClick={() => {}}
+                    onClick={showPopover}
                     type="link"
                     customClassName="trailer-button"
                     caption="Add Trailer"
                 />
+                <PopoverTrailer/>
             </div>
         )
     }

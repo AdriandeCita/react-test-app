@@ -1,4 +1,4 @@
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 import {setVideoFilter, showModal} from '../actions';
 import Films from '../components/Films';
 

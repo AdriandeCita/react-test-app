@@ -1,6 +1,6 @@
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 import MovieBlock from "../components/MovieBlock";
-import { showModal } from "../actions";
+import {showModal} from "../actions";
 
 const isVideoAcceptedByFilter = (video, filter) => {
     for (let i = 0; i < video.cast.length; i++) {

@@ -1,5 +1,5 @@
-import { connect } from 'react-redux'
-import { setVideoOrder } from '../actions'
+import {connect} from 'react-redux'
+import {setVideoOrder} from '../actions'
 import SortActionItem from "../components/SortActionItem";
 
 const mapStateToProps = (state, ownProps) => ({

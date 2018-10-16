@@ -1,0 +1,27 @@
+.description-form {
+    padding-top: 45px;
+    padding-bottom: 65px;
+
+    header {
+        font-family: var(--font-family-oswald);
+        font-weight: 200;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 42px;
+        margin-bottom: 1em;
+        color: var(--highlight-font-color);
+    }
+
+    .input-row {
+        display: flex;
+        justify-content: space-between;
+
+        .text-input {
+            width: calc(33% - 1em/3);
+        }
+
+        &>*+* {
+            margin-left: 0.5em;
+        }
+    }
+}

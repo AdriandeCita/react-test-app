@@ -13,7 +13,7 @@ const PopoverPoster = ({ popoverProps, visible, hidePopover }) => (
         </button>
 
         <form action="#" className="form">
-            <input type="text" placeholder="Label URL poster" className="text-input"/>
+            <input type="text" placeholder="Enter URL poster" className="text-input"/>
             <button type="submit" className="btn-submit">Add</button>
         </form>
     </div>
