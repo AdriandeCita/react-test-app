@@ -1,5 +1,10 @@
 import {connect} from 'react-redux';
-import {hideModal, setActiveVideo, showDescriptionForm} from "../actions";
+import {
+    hideModal,
+    hidePopover,
+    setActiveVideo,
+    showDescriptionForm
+} from "../actions";
 import ModalView from "../components/ModalView";
 
 const mapStateToProps = (state, ownProps) => ({
@@ -11,6 +16,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     hideModal: () => {
         dispatch(hideModal());
         dispatch(setActiveVideo());
+        dispatch(hidePopover())
     },
     showDescriptionForm: () => dispatch(showDescriptionForm(true)),
 });
