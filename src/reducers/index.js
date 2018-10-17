@@ -5,6 +5,7 @@ import modal from "./modal";
 import popover from "./popover";
 import descriptionForm from "./descriptionForm";
 import characterForm from "./characterForm";
+import video from "./video"
 
 export default combineReducers({
     videoCharacterFilter,
@@ -12,5 +13,6 @@ export default combineReducers({
     descriptionForm,
     characterForm,
     modal,
-    popover
+    popover,
+    video
 })

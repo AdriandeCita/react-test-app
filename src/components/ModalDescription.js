@@ -2,7 +2,7 @@ import React from 'react';
 import ButtonRound from "./ButtonRound";
 import "./ModalPoster.css";
 
-const ModalDescription = ({release, rating, length, title, showDescriptionForm}) => {
+const ModalDescription = ({release, rating, length, title, description, showDescriptionForm}) => {
     const releaseBlock = release ? (
         <div className="item">
             <header>Release</header>
@@ -31,7 +31,7 @@ const ModalDescription = ({release, rating, length, title, showDescriptionForm})
                 {lengthBlock}
             </div>
             <div className="text-content">
-                <p>Rey develops her newly discovered abilities with the guidance of Luke Skywalker, who is unsettled by the strength of her powers. Meanwhile, the Resistance prepares to do battle with the First Order.</p>
+                <p>{description}</p>
             </div>
             <ButtonRound
                 customClassName="edit-content"

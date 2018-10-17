@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import PopoverPoster from "../components/PopoverPoster";
-import {hidePopover} from "../actions";
+import {addPoster, hidePopover} from "../actions";
 
 const mapStateToProps = (state, ownProps) => {
     if (state.popover.popoverType === 'ADD_POSTER') {
@@ -14,7 +14,8 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-    hidePopover: () => dispatch(hidePopover())
+    hidePopover: () => dispatch(hidePopover()),
+    addPoster: (posterData) => dispatch(addPoster(posterData))
 });
 
 export default connect(

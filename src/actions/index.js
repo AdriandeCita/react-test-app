@@ -68,3 +68,38 @@ export const hideCharacterForm = flag => {
         flag: flag
     };
 };
+
+export const setActiveVideo = video => {
+    return {
+        type: 'SET_ACTIVE_VIDEO',
+        data: video
+    };
+};
+
+export const addPoster = posterData => {
+    return {
+        type: 'ADD_POSTER',
+        data: posterData
+    };
+};
+
+export const addTrailer = trailerData => {
+    return {
+        type: 'ADD_TRAILER',
+        data: trailerData
+    };
+};
+
+export const setDescription = descriptionData => {
+    return {
+        type: 'SET_DESCRIPTION',
+        data: descriptionData
+    };
+};
+
+export const addCharacter = characterData => {
+    return {
+        type: 'ADD_CHARACTER',
+        data: characterData
+    };
+};

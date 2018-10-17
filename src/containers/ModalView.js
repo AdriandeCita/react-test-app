@@ -1,20 +1,17 @@
 import {connect} from 'react-redux';
-import {hideModal, showDescriptionForm} from "../actions";
+import {hideModal, setActiveVideo, showDescriptionForm} from "../actions";
 import ModalViewVideo from "../components/ModalViewVideo";
 
-const defaultVideoModel = {
-    title: '',
-    media: [],
-    cast: []
-};
-
 const mapStateToProps = (state, ownProps) => ({
-    video: ownProps.video ? ownProps.video : defaultVideoModel,
+    video: state.video,
     visibleDescriptionForm: state.descriptionForm
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-    hideModal: () => dispatch(hideModal()),
+    hideModal: () => {
+        dispatch(hideModal());
+        dispatch(setActiveVideo());
+    },
     showDescriptionForm: () => dispatch(showDescriptionForm(true)),
 });
 

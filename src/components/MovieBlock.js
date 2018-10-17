@@ -1,23 +1,38 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './MovieBlock.css';
 import {getMediaSrc} from "../utilities";
 
-const MovieBlock = ({ video, offsetTop, selected, activeModal, showVideo }) => (
-    <div className={`movie-block ${selected ? 'selected' : ''} ${(activeModal.modalType && !isCurrentVideoOpened(video, activeModal.modalProps)) ? 'hidden' : ''}`}>
-        <div className="movie-timeline"></div>
-        <div
-            className="movie-item"
-            style={offsetStyle(offsetTop)}
-            onClick={showVideo}
-        >
-            <img src={getMediaSrc(video.media, 'image')} alt="" className="movie-item-bg"/>
-            <div className="movie-item-caption-container">
-                <div className="movie-item-caption">{video.title}</div>
+class MovieBlock extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick() {
+        this.props.showVideo(this.props.video);
+    }
+
+    render() {
+        return (
+            <div className={`movie-block ${this.props.selected ? 'selected' : ''} ${(this.props.activeModal.modalType && !isCurrentVideoOpened(this.props.video, this.props.activeModal.modalProps)) ? 'hidden' : ''}`}>
+                <div className="movie-timeline"></div>
+                <div
+                    className="movie-item"
+                    style={offsetStyle(this.props.offsetTop)}
+                    onClick={this.handleClick}
+                >
+                    <img src={getMediaSrc(this.props.video.media, 'image')} alt="" className="movie-item-bg"/>
+                    <div className="movie-item-caption-container">
+                        <div className="movie-item-caption">{this.props.video.title}</div>
+                    </div>
+                </div>
+                <div className="movie-date-mark">{formatDate(this.props.video.release)}</div>
             </div>
-        </div>
-        <div className="movie-date-mark">{formatDate(video.release)}</div>
-    </div>
-);
+        )
+    }
+}
 
 const isCurrentVideoOpened = (currentVideo, modalProp) => {
     return modalProp && modalProp.video === currentVideo;

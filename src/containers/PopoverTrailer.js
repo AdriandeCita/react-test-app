@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {hidePopover} from "../actions";
+import {addTrailer, hidePopover} from "../actions";
 import PopoverTrailer from "../components/PopoverTrailer";
 
 const mapStateToProps = (state, ownProps) => {
@@ -14,7 +14,8 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-    hidePopover: () => dispatch(hidePopover())
+    hidePopover: () => dispatch(hidePopover()),
+    addTrailer: (trailerData) => dispatch(addTrailer(trailerData))
 });
 
 export default connect(

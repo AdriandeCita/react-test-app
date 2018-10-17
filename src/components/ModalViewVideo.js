@@ -13,13 +13,9 @@ const ModalViewVideo = ({ video, hideModal, visibleDescriptionForm }) => {
     const modalDescription = (
         visibleDescriptionForm
             ? <FormVideoDescription/>
-            : <ModalDescription
-                title={video.title}
-                release={video.release}
-                rating={video.rating}
-                length={video.length}
-            />
-    )
+            : <ModalDescription/>
+    );
+
     return (
         <Modal
             isOpen={true}

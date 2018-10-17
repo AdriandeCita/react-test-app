@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import MovieBlock from "../components/MovieBlock";
-import {showModal} from "../actions";
+import {setActiveVideo, showModal} from "../actions";
 
 const isVideoAcceptedByFilter = (video, filter) => {
     for (let i = 0; i < video.cast.length; i++) {
@@ -19,7 +19,10 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-    showVideo: () => dispatch(showModal('VIEW_VIDEO', ownProps))
+    showVideo: (video) => {
+        dispatch(setActiveVideo(video));
+        dispatch(showModal('VIEW_VIDEO', ownProps));
+    },
 });
 
 const VideoItem = connect(
