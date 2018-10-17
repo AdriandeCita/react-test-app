@@ -1,9 +1,9 @@
 import React from 'react';
-import ButtonRound from "./ButtonRound";
+import ModalButtonRound from "./ModalButtonRound";
 import "./ModalPoster.css";
 import PopoverPoster from "../containers/PopoverPoster";
 
-const ModalPoster = ({ path, showPopover }) => {
+const ModalPoster = ({path, showPopover}) => {
 
     if (path) {
         return (
@@ -15,7 +15,7 @@ const ModalPoster = ({ path, showPopover }) => {
 
     return (
         <div className="modal-poster">
-            <ButtonRound
+            <ModalButtonRound
                 onClick={showPopover}
                 type="link"
                 customClassName="poster-button"

@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import FormAddCharacter from "../components/FormAddCharacter";
+import AddCharacterForm from "../components/AddCharacterForm";
 import {hideCharacterForm} from "../actions";
 
 const mapStateToProps = (state, ownProps) => ({
@@ -13,4 +13,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(FormAddCharacter)
+)(AddCharacterForm)

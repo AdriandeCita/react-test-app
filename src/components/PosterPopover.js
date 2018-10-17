@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import './PopoverPoster.css';
+import './Popover.css';
 
-class PopoverPoster extends Component {
+class PosterPopover extends Component {
     constructor(props) {
         super(props);
         this.state = {src: ''};
@@ -44,4 +44,4 @@ class PopoverPoster extends Component {
     }
 }
 
-export default PopoverPoster;
+export default PosterPopover;

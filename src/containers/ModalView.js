@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import {hideModal, setActiveVideo, showDescriptionForm} from "../actions";
-import ModalViewVideo from "../components/ModalViewVideo";
+import ModalView from "../components/ModalView";
 
 const mapStateToProps = (state, ownProps) => ({
     video: state.video,
@@ -18,4 +18,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(ModalViewVideo)
+)(ModalView)

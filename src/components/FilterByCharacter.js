@@ -1,7 +1,7 @@
 import React from 'react';
 import FilterByCharacterItem from "../containers/FilterByCharacterItem";
 
-const CharactersFilter = ({ characters }) => (
+const FilterByCharacter = ({characters}) => (
     <div className="filter-by-character">
         {characters.map((character) =>
             <FilterByCharacterItem
@@ -12,4 +12,4 @@ const CharactersFilter = ({ characters }) => (
     </div>
 );
 
-export default CharactersFilter;
+export default FilterByCharacter;

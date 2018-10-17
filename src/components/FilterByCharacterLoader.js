@@ -1,9 +1,9 @@
 import React from 'react';
 import gql from 'graphql-tag';
 import {Query} from "react-apollo";
-import CharactersFilter from "./CharactersFilter";
+import FilterByCharacter from "./FilterByCharacter";
 
-const LoaderCharactersFilter = () => (
+const FilterByCharacterLoader = () => (
     <Query
         query={gql`{
             characters {
@@ -22,12 +22,12 @@ const LoaderCharactersFilter = () => (
             }
         }`}
     >
-        {({ loading, error, data }) => {
+        {({loading, error, data}) => {
             if (loading) return <p>Loading...</p>;
             if (error) return <p>Error :(</p>;
 
             return (
-                <CharactersFilter
+                <FilterByCharacter
                     characters={data.characters.items}
                 />
             );
@@ -35,4 +35,4 @@ const LoaderCharactersFilter = () => (
     </Query>
 );
 
-export default LoaderCharactersFilter;
+export default FilterByCharacterLoader;

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class PopoverTrailer extends Component {
+class TrailerPopover extends Component {
     constructor(props) {
         super(props);
         this.state = {src: ''};
@@ -43,4 +43,4 @@ class PopoverTrailer extends Component {
     }
 }
 
-export default PopoverTrailer;
+export default TrailerPopover;

@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import YouTube from "react-youtube";
-import "./YoutubeVideo.css";
-import ButtonRound from "./ButtonRound";
+import "./YoutubeVideoView.css";
+import ModalButtonRound from "./ModalButtonRound";
 
-class YoutubeVideo extends Component {
+class YoutubeVideoView extends Component {
     constructor(props) {
         super(props);
 
@@ -45,7 +45,7 @@ class YoutubeVideo extends Component {
                     className="player-poster"
                     style={{backgroundImage: `url("https://i.ytimg.com/vi/${this.state.videoId}/maxresdefault.jpg")`}}>
                 </div>
-                <ButtonRound
+                <ModalButtonRound
                     onClick={this.beginPlaying}
                     type="play"
                     customClassName="player-custom-controls"
@@ -56,4 +56,4 @@ class YoutubeVideo extends Component {
     }
 }
 
-export default YoutubeVideo;
+export default YoutubeVideoView;

@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import gql from 'graphql-tag';
-import './ModalCastCharacter.css';
+import './ModalCastCharacterItem.css';
 import {Query} from "react-apollo";
 import {getMediaSrc} from "../utilities";
 
-class ModalCastCharacter extends Component {
+class ModalCastCharacterItem extends Component {
 
     render() {
         return (
@@ -21,7 +21,7 @@ class ModalCastCharacter extends Component {
                     }
                 }`}
             >
-                {({ loading, error, data }) => {
+                {({loading, error, data}) => {
                     if (loading) return <p>Loading...</p>;
                     if (error) return <p>Error :(</p>;
 
@@ -42,4 +42,4 @@ class ModalCastCharacter extends Component {
     }
 }
 
-export default ModalCastCharacter;
+export default ModalCastCharacterItem;

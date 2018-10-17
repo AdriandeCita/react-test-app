@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import PopoverPoster from "../components/PopoverPoster";
+import PosterPopover from "../components/PosterPopover";
 import {addPoster, hidePopover} from "../actions";
 
 const mapStateToProps = (state, ownProps) => {
@@ -21,4 +21,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(PopoverPoster)
+)(PosterPopover)

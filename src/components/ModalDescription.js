@@ -1,5 +1,5 @@
 import React from 'react';
-import ButtonRound from "./ButtonRound";
+import ModalButtonRound from "./ModalButtonRound";
 import "./ModalPoster.css";
 
 const ModalDescription = ({release, rating, length, title, description, showDescriptionForm}) => {
@@ -33,7 +33,7 @@ const ModalDescription = ({release, rating, length, title, description, showDesc
             <div className="text-content">
                 <p>{description}</p>
             </div>
-            <ButtonRound
+            <ModalButtonRound
                 customClassName="edit-content"
                 onClick={showDescriptionForm}
                 type="edit"

@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import './MovieBlock.css';
+import './MovieListItem.css';
 import {getMediaSrc} from "../utilities";
 
-class MovieBlock extends Component {
+class MovieListItem extends Component {
 
     constructor(props) {
         super(props);
@@ -54,4 +54,4 @@ const offsetStyle = (offset) => ({
     top: `calc(0.01 * ${offset} * (100% - 214px))`
 });
 
-export default MovieBlock;
+export default MovieListItem;

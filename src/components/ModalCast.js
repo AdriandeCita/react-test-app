@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './ModalCast.css';
-import ModalCastCharacter from "./ModalCastCharacter";
-import ButtonRound from "./ButtonRound";
+import ModalCastCharacterItem from "./ModalCastCharacterItem";
+import ModalButtonRound from "./ModalButtonRound";
 
 class ModalCast extends Component {
 
@@ -12,13 +12,13 @@ class ModalCast extends Component {
                 <div className="content">
                     {this.props.cast.map((character, index) => {
                         return (
-                            <ModalCastCharacter
+                            <ModalCastCharacterItem
                                 characterId={character.id}
                                 key={index}
                             />
                         )
                     })}
-                    <ButtonRound
+                    <ModalButtonRound
                         customClassName="add-character modal-cast-character"
                         onClick={this.props.showCharacterForm}
                         type="add"

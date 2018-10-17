@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import {addTrailer, hidePopover} from "../actions";
-import PopoverTrailer from "../components/PopoverTrailer";
+import TrailerPopover from "../components/TrailerPopover";
 
 const mapStateToProps = (state, ownProps) => {
     if (state.popover.popoverType === 'ADD_TRAILER') {
@@ -21,4 +21,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(PopoverTrailer)
+)(TrailerPopover)

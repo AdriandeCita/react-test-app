@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import {setVideoFilter, showModal} from '../actions';
-import Films from '../components/Films';
+import MovieList from '../components/MovieList';
 
 const parseUniverseTime = (date) => {
     return parseInt(date) * (date.indexOf('BBY') >= 0 ? -1 : 1)
@@ -47,9 +47,7 @@ const mapDispatchToProps = dispatch => {
     }
 };
 
-const VideoList = connect(
+export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Films);
-
-export default VideoList
+)(MovieList);

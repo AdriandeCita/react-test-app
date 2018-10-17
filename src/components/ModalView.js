@@ -1,6 +1,6 @@
+import Modal from 'react-modal';
 import React from 'react';
-import Modal from "react-modal";
-import './ModalViewVideo.css';
+import './ModalView.css';
 import {getMediaSrc} from "../utilities";
 import ModalDescription from "../containers/ModalDescription";
 import ModalPoster from "../containers/ModalPoster";
@@ -9,7 +9,7 @@ import FormVideoDescription from "../containers/FormVideoDescription";
 import FormAddCharacter from "../containers/FormAddCharacter";
 import ModalCast from "../containers/ModalCast";
 
-const ModalViewVideo = ({ video, hideModal, visibleDescriptionForm }) => {
+const ModalView = ({video, hideModal, visibleDescriptionForm}) => {
     const modalDescription = (
         visibleDescriptionForm
             ? <FormVideoDescription/>
@@ -47,4 +47,4 @@ const ModalViewVideo = ({ video, hideModal, visibleDescriptionForm }) => {
     )
 };
 
-export default ModalViewVideo;
+export default ModalView;

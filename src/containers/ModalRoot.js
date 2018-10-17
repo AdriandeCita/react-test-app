@@ -14,7 +14,7 @@ const mapStateToProps = (state, ownProps) => {
     }
 };
 
-const ModalRoot = ({ modalType, modalProps }) => {
+const ModalRoot = ({modalType, modalProps}) => {
     if (!modalType) {
         return null;
     }

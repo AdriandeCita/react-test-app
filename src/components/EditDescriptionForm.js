@@ -1,15 +1,17 @@
 import React, {Component} from 'react';
-import './FormVideoDescription.css';
+import './EditDescriptionForm.css';
 
-class FormVideoDescription extends Component {
+class EditDescriptionForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            title: this.props.title,
-            year: new Date(Date.parse(this.props.release)).getFullYear(),
-            rating: this.props.rating,
-            length: this.props.length,
-            description: this.props.description,
+            title: this.props.title ? this.props.title : '',
+            year: this.props.release
+                ? new Date(Date.parse(this.props.release)).getFullYear()
+                : '',
+            rating: this.props.rating ? this.props.rating : '',
+            length: this.props.length ? this.props.length : '',
+            description: this.props.description ? this.props.description : '',
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -55,4 +57,4 @@ class FormVideoDescription extends Component {
 
 }
 
-export default FormVideoDescription;
+export default EditDescriptionForm;

@@ -1,7 +1,7 @@
 import React from 'react';
 import {getMediaSrc} from "../utilities";
 
-const FilterActionItem = ({character, active, onClick, activeModal}) => (
+const FilterByCharacterItem = ({character, active, onClick, activeModal}) => (
 
     <div
         className={`filter-action ${active ? 'active' : ''} ${activeModal.modalType ? 'hidden' : ''}`}
@@ -14,4 +14,4 @@ const FilterActionItem = ({character, active, onClick, activeModal}) => (
     </div>
 );
 
-export default FilterActionItem;
+export default FilterByCharacterItem;

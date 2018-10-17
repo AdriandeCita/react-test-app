@@ -1,20 +1,20 @@
 import React from 'react';
-import ButtonRound from "./ButtonRound";
+import ModalButtonRound from "./ModalButtonRound";
 import "./ModalPoster.css";
-import YoutubeVideo from "./YoutubeVideo";
+import YoutubeVideoView from "./YoutubeVideoView";
 import PopoverTrailer from "../containers/PopoverTrailer";
 
-const ModalVideo = ({ path, showPopover }) => {
+const ModalVideoView = ({path, showPopover}) => {
     if (path) {
         return (
-            <YoutubeVideo
+            <YoutubeVideoView
                 video={path}
             />
         )
     } else {
         return (
             <div className="player-wrapper">
-                <ButtonRound
+                <ModalButtonRound
                     onClick={showPopover}
                     type="link"
                     customClassName="trailer-button"
@@ -26,4 +26,4 @@ const ModalVideo = ({ path, showPopover }) => {
     }
 };
 
-export default ModalVideo;
+export default ModalVideoView;

@@ -1,9 +1,9 @@
 import React    from 'react';
 import {Query} from "react-apollo";
 import {gql} from "apollo-boost";
-import VideoList from "../containers/VideoList";
+import MovieListContainer from "../containers/MovieList";
 
-const LoaderFilmList = () => (
+const MovieListLoader = () => (
 
     <Query
         query={gql`{
@@ -26,12 +26,12 @@ const LoaderFilmList = () => (
             }
         }`}
     >
-        {({ loading, error, data }) => {
+        {({loading, error, data}) => {
             if (loading) return <p>Loading...</p>;
             if (error) return <p>Error :(</p>;
 
             return (
-                <VideoList
+                <MovieListContainer
                     videos={data.movies.items}
                 />
             );
@@ -39,4 +39,4 @@ const LoaderFilmList = () => (
     </Query>
 );
 
-export default LoaderFilmList;
+export default MovieListLoader;

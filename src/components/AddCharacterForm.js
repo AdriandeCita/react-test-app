@@ -1,7 +1,7 @@
 import React from 'react';
-import './FormAddCharacter.css';
+import './AddCharacterForm.css';
 
-const FormAddCharacter = ({ hideCharacterForm, visibleCharacterForm }) => (
+const AddCharacterForm = ({hideCharacterForm, visibleCharacterForm}) => (
 
     <div className={`popover-inline popover ${visibleCharacterForm ? 'visible' : ''}`}>
 
@@ -27,4 +27,4 @@ const FormAddCharacter = ({ hideCharacterForm, visibleCharacterForm }) => (
 
 );
 
-export default FormAddCharacter;
+export default AddCharacterForm;

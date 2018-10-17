@@ -1,8 +1,8 @@
 import React    from 'react';
-import './Films.css';
-import VideoItem from "../containers/VideoItem";
+import './MovieList.css';
+import MovieListItemContainer from "../containers/MovieListItem";
 
-const Films = ({ videos, onContainerDoubleClick }) => {
+const MovieList = ({videos, onContainerDoubleClick}) => {
 
     const offsetParamsSequence = videos.map(element => element.rating);
     const offsetEdgeTop = Math.max(...offsetParamsSequence);
@@ -15,7 +15,7 @@ const Films = ({ videos, onContainerDoubleClick }) => {
         >
             <div className="wrapper">
                 {videos.map((video, index) =>
-                    <VideoItem
+                    <MovieListItemContainer
                         video={video}
                         key={index}
                         offsetTop={calculateOffsetTop(offsetEdgeTop, offsetEdgeBottom, video.rating)}
@@ -30,4 +30,4 @@ const calculateOffsetTop = (top, bottom, current) => {
     return ((top - current) / ((top - bottom) / 100));
 };
 
-export default Films;
+export default MovieList;

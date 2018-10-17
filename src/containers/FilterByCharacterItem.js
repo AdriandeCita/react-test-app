@@ -1,6 +1,6 @@
 import {connect} from 'react-redux'
 import {setVideoFilter} from '../actions'
-import FilterActionItem from "../components/FilterActionItem";
+import FilterByCharacterItem from "../components/FilterByCharacterItem";
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -16,4 +16,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(FilterActionItem)
+)(FilterByCharacterItem)

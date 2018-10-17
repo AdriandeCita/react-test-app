@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import FormVideoDescription from "../components/FormVideoDescription";
+import EditDescriptionForm from "../components/EditDescriptionForm";
 import {hideDescriptionForm, setDescription} from "../actions";
 
 const mapStateToProps = (state, ownProps) => ({
@@ -19,4 +19,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(FormVideoDescription)
+)(EditDescriptionForm)

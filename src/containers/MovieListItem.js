@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import MovieBlock from "../components/MovieBlock";
+import MovieListItem from "../components/MovieListItem";
 import {setActiveVideo, showModal} from "../actions";
 
 const isVideoAcceptedByFilter = (video, filter) => {
@@ -25,9 +25,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     },
 });
 
-const VideoItem = connect(
+export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(MovieBlock);
-
-export default VideoItem
+)(MovieListItem);
